@@ -30,7 +30,12 @@
           </li>
         </ul>
         <button class=" btn btn-primary m-3" [routerLink]="['/producto/editar/',producto._id]"> Editar </button>
-        <button class="btn btn-danger" (click)="deleteProducto(producto._id)">Eliminar</button>
+        <!-- <button class="btn btn-danger" (click)="deleteProducto(producto._id)">Eliminar</button> -->
+        <button class="btn btn-danger" mwlConfirmationPopover [popoverTitle]="popoverTitle"
+          [popoverMessage]="popoverMessage" placement="left" (confirm)="deleteProducto(producto._id)"
+          (cancel)="cancelClicked = true">
+          Eliminar
+        </button>
       </div>
 
 

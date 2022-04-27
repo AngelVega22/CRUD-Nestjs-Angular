@@ -11,6 +11,12 @@ export class ProductosListComponent implements OnInit {
   term: any;
   productos: Producto[] = [];
 
+
+  popoverTitle = 'Advertencia';
+  popoverMessage = '¿Estás seguro que deseas eliminar este producto?';
+  confirmClicked = false;
+  cancelClicked = false;
+
   constructor(private productoService: ProductoService) { }
 
   ngOnInit(): void {
