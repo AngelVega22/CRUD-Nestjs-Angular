@@ -4,17 +4,21 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
 
+
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { ProductosListComponent } from './components/productos-list/productos-list.component';
 import { ProductoFormComponent } from './components/producto-form/producto-form.component';
+import { FilternamePipe } from './filtername.pipe';
+
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
     ProductosListComponent,
-    ProductoFormComponent
+    ProductoFormComponent,
+    FilternamePipe
   ],
   imports: [
     BrowserModule,
