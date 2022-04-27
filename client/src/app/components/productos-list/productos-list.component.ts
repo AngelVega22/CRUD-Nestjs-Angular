@@ -7,7 +7,7 @@ import { Producto } from '../../interfaces/Producto';
   styleUrls: ['./productos-list.component.css']
 })
 export class ProductosListComponent implements OnInit {
-
+  term: any;
   productos: Producto[] = [];
 
   constructor(private productoService: ProductoService) { }
