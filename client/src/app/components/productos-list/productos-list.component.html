@@ -1,11 +1,10 @@
 <label for="" class="ms-4 h4">Buscador</label>
-<input type="text" class="form-control ms-3 mb-4" placeholder="Escribe tu busqueda aquí" [(ngModel)]="term">
-<div class="row">
+<input type="text" class="form-control mb-4" placeholder="Escribe tu busqueda aquí" [(ngModel)]="term">
+<div class="row d-flex justify-content-center">
 
 
 
-  <div *ngFor="let producto of (productos |filter:term |filtername:term)  "
-    class="card card-body col-3 ms-2 shadow-sm mb-2">
+  <div *ngFor="let producto of (productos |filter:term |filtername:term)  " class="card  col-3 ms-2 shadow-sm mb-2">
     <div>
 
       <div>
@@ -13,21 +12,21 @@
       </div>
       <div>
         <ul>
-          <li>
-            id:{{producto._id}}
-          </li>
-          <li>
-            Nombre:{{producto.nombre}}
-          </li>
-          <li>
-            Marca:{{producto.marca}}
-          </li>
-          <li>
-            Precio:{{producto.precio}}
-          </li>
-          <li>
+          <small>
+            {{producto._id}}
+          </small>
+          <div>
+            {{producto.marca}}
+          </div>
+          <div>
+            {{producto.nombre}}
+          </div>
+          <small>
             Creado: {{producto.createdAt}}
-          </li>
+          </small>
+          <div class="text-danger h5 mt-4 ">
+            Precio: {{producto.precio}}
+          </div>
         </ul>
         <button class=" btn btn-primary m-3" [routerLink]="['/producto/editar/',producto._id]"> Editar </button>
         <!-- <button class="btn btn-danger" (click)="deleteProducto(producto._id)">Eliminar</button> -->
